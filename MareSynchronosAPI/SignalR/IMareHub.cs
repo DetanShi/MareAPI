@@ -1,6 +1,7 @@
 ﻿using MareSynchronos.API.Data;
 using MareSynchronos.API.Data.Enum;
 using MareSynchronos.API.Dto;
+using MareSynchronos.API.Dto.CharaData;
 using MareSynchronos.API.Dto.Chat;
 using MareSynchronos.API.Dto.Group;
 using MareSynchronos.API.Dto.User;
@@ -118,4 +119,12 @@ public interface IMareHub
     Task UserSetPairPermissions(UserPermissionsDto userPermissions);
 
     Task UserSetProfile(UserProfileDto userDescription);
+
+    Task<CharaDataFullDto?> CharaDataCreate();
+    Task<CharaDataFullDto?> CharaDataUpdate(CharaDataUpdateDto updateDto);
+    Task<bool> CharaDataDelete(string id);
+    Task<CharaDataMetaInfoDto?> CharaDataGetMetainfo(string id);
+    Task<CharaDataDownloadDto?> CharaDataDownload(string id);
+    Task<List<CharaDataFullDto>> CharaDataGetOwn();
+    Task<List<CharaDataMetaInfoDto>> CharaDataGetShared();
 }
