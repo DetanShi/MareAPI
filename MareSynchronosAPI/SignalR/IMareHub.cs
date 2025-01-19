@@ -59,6 +59,12 @@ public interface IMareHub
 
     Task Client_UserUpdateSelfPairPermissions(UserPermissionsDto dto);
 
+    Task Client_GposeLobbyJoin(UserData userData);
+    Task Client_GposeLobbyLeave(UserData userData);
+    Task Client_GposeLobbyPushCharacterData(CharaDataDownloadDto charaDownloadDto);
+    Task Client_GposeLobbyPushPoseData(UserData userData, PoseData poseData);
+    Task Client_GposeLobbyPushWorldData(UserData userData, WorldData worldData);
+
     Task<ConnectionDto> GetConnectionDto();
 
     Task GroupBanUser(GroupPairDto dto, string reason);
@@ -128,4 +134,11 @@ public interface IMareHub
     Task<List<CharaDataFullDto>> CharaDataGetOwn();
     Task<List<CharaDataMetaInfoDto>> CharaDataGetShared();
     Task<CharaDataFullDto?> CharaDataAttemptRestore(string id);
+
+    Task<string> GposeLobbyCreate();
+    Task<List<UserData>> GposeLobbyJoin(string lobbyId);
+    Task<bool> GposeLobbyLeave();
+    Task GposeLobbyPushCharacterData(CharaDataDownloadDto charaDownloadDto);
+    Task GposeLobbyPushPoseData(PoseData poseData);
+    Task GposeLobbyPushWorldData(WorldData worldData);
 }
