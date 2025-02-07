@@ -127,4 +127,5 @@ public interface IMareHub
     Task<CharaDataDownloadDto?> CharaDataDownload(string id);
     Task<List<CharaDataFullDto>> CharaDataGetOwn();
     Task<List<CharaDataMetaInfoDto>> CharaDataGetShared();
+    Task<CharaDataFullDto?> CharaDataAttemptRestore(string id);
 }
