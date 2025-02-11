@@ -31,5 +31,6 @@ public class CharacterData
     public string HeelsData { get; set; } = string.Empty;
     public string HonorificData { get; set; } = string.Empty;
     public string ManipulationData { get; set; } = string.Empty;
-    public string PalettePlusData { get; set; } = string.Empty;
+    public string MoodlesData { get; set; } = string.Empty;
+    public string PetNamesData { get; set; } = string.Empty;
 }
